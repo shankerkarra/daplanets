@@ -2,7 +2,6 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 
-
 const Star = new Schema(
   {
     star_name: { type: String, required: true },
@@ -14,8 +13,10 @@ const Star = new Schema(
 
 Star.virtual('galaxy',
   {
-    LocalField: 'galaxyId',
+    localField: 'galaxyId',
     ref: 'Galaxy',
     foreignField: '_id',
     justOne: true
   })
+
+export default Star
