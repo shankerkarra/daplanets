@@ -5,6 +5,7 @@ class PlanetsService {
   async getAll(query = {}) {
     return await dbContext.Planets.find(query)
       .populate('star', 'star_name')
+      .populate('galaxy', 'name')
   }
 
   async getById(id) {
