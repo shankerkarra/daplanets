@@ -11,7 +11,7 @@ const Planet = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 )
 
-Star.virtual('star',
+Planet.virtual('star',
   {
     localField: 'starId',
     ref: 'Star',
